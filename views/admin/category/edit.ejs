@@ -1,0 +1,66 @@
+<%- include('../../partials/dheader.ejs') %>
+    <section class="dashboard-wrap mtb-40">
+    	<div class="container">
+            <div class="body-content">
+        		<div class="row">
+              <%- include('../../partials/lsidebar.ejs') %>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                              <div class="dash-title">
+                                  <h1>Update Blog</h1>
+                              </div>
+                            </div>
+                            <div class="blog-form">
+                              <form action="/categoryupdate/<%=rew._id %>" method="post" enctype="multipart/form-data"  >
+                                <div class="form-group form-row">
+                                    <label for="title" class="col-md-3">Title <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                      <input value="<%=rew.title %>" name="title" type="text" class="form-control" placeholder="Title" required>
+                                    </div>
+                                </div>
+                                <div class="form-group form-row">
+                                    <label for="description" class="col-md-3">Description <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                      <textarea  name="description" rows="5" class="form-control" placeholder="Description" required><%=rew.description %></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group form-row" >
+                                  <label for="select1" class="form-label col-md-3" >Select Category</label>
+                                  <div class="col-md-9">
+                      <select name="category" class="form-select" id="select1" >
+                        <option value="Technoloy" >Technoloy</option>
+                        <option value="Automobile" >Automobile</option>
+                        <option value="Entertainment" >Entertainment</option>
+                        <option value="Medical Science" >Medical Science</option>
+                        <option value="Gaming" >Gaming</option>
+                      </select>
+                    </div>
+                              </div>
+                              <div class="form-group form-row">
+                                <label for="ci" class="col-md-3">Current Image</label>
+                                <div class="col-md-9">
+                                  <img  name="ci" height="60px" width="40px" src="<%= rew.image.url %>" >
+                                </div>
+                              </div>
+                                <div class="form-group form-row">
+                                  <label class="col-md-3">Change Image</label>
+                                  <div class="col-md-9">
+                                    <input name="ufoo" type="file" id="image" />
+                                  </div>
+                                </div>
+                                <div class="form-group form-row">
+                                    <label class="col-md-3"></label>
+                                    <div class="col-md-9">
+                                      <button type="submit" class="btn btn-danger">UPDATE</button>
+                                    </div>
+                                </div>
+                              </form>
+                            </div>
+                        </div>   
+                    </div>
+        		</div>
+            </div>
+    	</div>
+    </section>
+    <%- include('../../partials/footer.ejs') %>

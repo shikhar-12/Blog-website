@@ -1,0 +1,18 @@
+<%- include('./partials/dheader.ejs') %>
+    <section class="featured-blog mtb-40">
+			<div class="container">
+				<div class="row">
+					<% rew.forEach((data)=>{%>
+					<div class="col-md-4">
+						<div class="blog-box">
+							<img src="<%= data.image.url %>" height="170px" width="40px" alt="blog1" />
+							<h3><%= data.title %></h3>
+							<p>by <span>RSGiTECH</span> on <span><%= data.updatedAt.toDateString() %></span></p>
+							<p><%= data.description.slice(0,50) %></p>
+							<a href="/detail/<%= data._id %>" class="btn btn-danger">Read more...</a>
+						</div>
+					</div>
+					<%})%>
+					</div>
+				</section>
+    <%- include('./partials/footer.ejs') %>

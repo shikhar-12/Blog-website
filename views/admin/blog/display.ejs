@@ -1,0 +1,47 @@
+<%- include('../../partials/dheader.ejs') %>
+    <section class="dashboard-wrap mtb-40">
+    	<div class="container">
+            <div class="body-content">
+        		<div class="row">
+                    <%- include('../../partials/lsidebar.ejs') %>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                                <div class="dash-title">
+                                    <h1>Blogs</h1>
+                                </div>
+                                <div class="dash-nav">
+                                    <a href="/admin/blog/create" class="btn btn-success">Add Post</a>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>#ID</th>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Action</th>
+                                </tr>
+                                <% rew.forEach((data)=>{ %>
+                                    <tr>
+                                        <td><%= data._id %></td>
+                                        <td><img height="60px" width="40px" src="<%= data.image.url %>" ></td>
+                                        <td><%= data.title %></td>
+                                        <td><%= data.description %></td>
+                                        <td><%= data.category %></td>
+                                        <td>
+                                            <a href="/admin/blog/view/<%= data._id %>" class="btn btn-success btn-sm">View</a>
+                                            <a href="/admin/blog/edit/<%= data._id %>" class="btn btn-info btn-sm">Edit</a>
+                                            <a href="/admin/blog/delete/<%= data._id %>" class="btn btn-danger btn-sm">Delete</a>
+                                        </td>
+                                    </tr>
+                                    <%  })  %>
+                            </table>
+                        </div>   
+                    </div>
+        		</div>
+            </div>
+    	</div>
+    </section>
+<%- include('../../partials/footer.ejs') %>

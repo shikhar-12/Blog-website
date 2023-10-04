@@ -1,0 +1,40 @@
+<%- include('../../partials/dheader.ejs') %>
+    <section class="dashboard-wrap mtb-40">
+    	<div class="container">
+            <div class="body-content">
+        		<div class="row">
+                    <%- include('../../partials/lsidebar.ejs') %>
+                    <div class="col-md-9">
+                        <div class="dash-right">
+                            <div class="dash-header">
+                                <div class="dash-title">
+                                    <h1>View Blog</h1>
+                                </div>
+                            </div>
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>#ID</th>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
+                                    <th>Action</th>
+                                </tr>
+                                    <tr>
+                                        <td><%= rew._id %></td>
+                                        <td><img src="<%= rew.image.url %>" ></td>
+                                        <td><%= rew.title %></td>
+                                        <td><%= rew.description %></td>
+                                        <td><%= rew.category %></td>
+                                        <td>
+                                            <a href="/admin/category/display" class="btn btn-danger btn-sm">Back</a>
+                                        </td>
+                                    </tr>
+                            </table>
+                        </div>   
+                    </div>
+        		</div>
+            </div>
+    	</div>
+    </section>
+<%- include('../../partials/footer.ejs') %>

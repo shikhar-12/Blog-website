@@ -1,0 +1,41 @@
+<%- include('../partials/header.ejs') %>
+    <section class="login-wrap mtb-40">
+    	<div class="container">
+    		<div class="row justify-content-center">
+    			<div class="col-md-6">
+                    <div class="login-box">
+                        <h1>Administrator Registration</h1>
+                        <form action="/admin/signup" method="post">
+                            <div class="form-group">
+                                <input type="text" name="username" class="form-control" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="cpassword" class="form-control" placeholder="Confirm Password">
+                            </div>
+                            <% if(message.length>0){%>
+                                <div class="alert alert-danger text-center">
+                                 <%= message%>
+                                </div>
+                             <%} %>
+                             <% if(message1.length>0){%>
+                                <div class="alert alert-danger text-center">
+                                 <%= message1%>
+                                </div>
+                             <%} %>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-danger">Signup</button>
+                                <a ></a>
+                            </div>
+                        </form>
+                    </div>         
+                </div>
+    		</div>
+    	</div>
+    </section>
+    <%- include('../partials/footer.ejs') %>
